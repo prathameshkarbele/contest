@@ -5,16 +5,24 @@ let arr = [
   { id: 3, name: "karen", age: "19", profession: "admin" },
 ];
 
-function PrintDeveloperswithMap() {
-  //Write your code here
-  arr.map(employee => {
-    if (employee.profession === "developer") {
+PrintDeveloperswithMap(arr);
+PrintDeveloperbyForEach(arr);
+addData(arr)
+removeAdmin(arr);
+concatenateArray(arr);
+
+
+function PrintDeveloperswithMap(arr) {
+  // Write your code here
+  let developers = arr.map(employee => {
+    if (employee.profession === 'developer') {
       console.log(employee.name);
     }
   });
 }
 
-function PrintDeveloperbyForEach() {
+
+function PrintDeveloperbyForEach(arr) {
   //Write your code here
   arr.forEach(employee => {
     if (employee.profession === "developer") {
@@ -23,24 +31,20 @@ function PrintDeveloperbyForEach() {
   });
 }
 
-function addData() {
+function addData(arr) {
   //Write your code here
   let newEmployee = { id: 4, name: "susan", age: "20", profession: "intern" };
   arr.push(newEmployee);
 
-  console.log(employees);
+  console.log(arr);
 }
 
-function removeAdmin() {
-  //Write your code here
-  let updatedEmployees = arr.filter(
-    (employee) => employee.profession !== "admin"
-  );
-
+function removeAdmin(arr) {
+  let updatedEmployees = arr.filter(employee => employee.profession !== 'admin');
   console.log(updatedEmployees);
 }
 
-function concatenateArray() {
+function concatenateArray(arr) {
   //Write your code here
   let newEmployees = [
     { name: "vijay", profession: "developer", id: 1 },
